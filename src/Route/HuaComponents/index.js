@@ -176,8 +176,9 @@ export default class HuaComponents extends React.Component{
   render(){
     return(
      <React.Fragment>
-        <HuaButton  type="primary">按钮</HuaButton>
-        <HuaButton type="danger">按钮</HuaButton>
+        <HuaButton onClick={() => console.log('button')} type="primary">按钮</HuaButton>
+        <HuaButton disabled type="danger">按钮</HuaButton>
+        <HuaButton  type="danger">按钮</HuaButton>
      </React.Fragment>
     )
   }
