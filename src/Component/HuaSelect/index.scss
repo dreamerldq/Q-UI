@@ -1,11 +1,35 @@
 .hua_select{
-  width: 100px;
   position: relative;
-  height: 30px;
+  min-height: 32px;
+  .content_group_multiple{
+    height: auto;
+    border-radius: 4px;
+    background: #fff;
+    border: solid 1px #d9d9d9;
+   
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    .multiple_item{
+      padding: 0 20px 0 10px;
+      margin-right: 4px;
+      border-radius: 2px;
+     
+      background: #fafafa;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      list-style: none;
+    }
+  }
+
+
+
+
   .content_group{
     width: 100%;
     height: 100%;
-    line-height: 1;
     padding: 0 10px;
     border-radius: 4px;
     background: #ffffff;

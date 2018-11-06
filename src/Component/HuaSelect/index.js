@@ -7,7 +7,6 @@ class HuaSelect extends React.Component {
   constructor(props) {
 
     super(props);
-    const {defaultValue} = this.props
     const options = {}
     this.props.children.forEach(child => {
       const {value:key, children:value} = child.props
@@ -15,8 +14,7 @@ class HuaSelect extends React.Component {
     })
     this.state = {
       show: false,
-      currentValue: options[defaultValue],
-      options: options
+      options: options,
     };
   }
   renderChildren = () => {
@@ -28,11 +26,14 @@ class HuaSelect extends React.Component {
       })
     })
   }
-  onHandleChange = (key) =>{
-    this.setState({
-      currentValue: this.state.options[key]
-    })
-    this.props.onHandleChange(key)
+  onHandleChange = (key) => {
+    const {value} = this.props
+    if(Array.isArray(value)){
+      this.props.onHandleChange([...value, key])
+    }else{
+      this.props.onHandleChange(key)
+    }
+    
     this.handleOptions()
   }
   handleOptions = () => {
@@ -40,13 +41,38 @@ class HuaSelect extends React.Component {
       show: !this.state.show,
     });
   }
+  componentDidMount(){
+    const {value, mode} = this.props
+    if(mode=== 'multiple' && !Array.isArray(value)){
+      this.props.onHandleChange([value])
+    }
+  }
+  handleDeleteItem = (idx,e) => {
+    const {value} = this.props
+    e.stopPropagation()
+    const multipleValue = value.filter((value,index) =>idx != index )
+    this.props.onHandleChange(multipleValue)
+  }
   render() {
+    const {value, mode, style} = this.props
     return (
-      <div className={styles.hua_select}>
-        <div onClick={this.handleOptions} className={styles.content_group}>
-          <span className={styles.select_content}>{this.state.currentValue}</span>
-          <Icon  type="down" theme="outlined" />
-        </div>
+      <div style={style} className={styles.hua_select}>
+        {mode === 'multiple' ? 
+        <ul onClick={this.handleOptions} className={styles.content_group_multiple}>
+            {(Array.isArray(value) ? value: [value]).map((valueItem, index) => {
+              return(
+                <li key={index} className={styles.multiple_item}>
+                  <div>{valueItem}</div>
+                  <span onClick={this.handleDeleteItem.bind(this,index)}><Icon type="close" theme="outlined" /></span>
+                </li>
+              )
+            })}
+        </ul>
+        :
+        <div style={style} onClick={this.handleOptions} className={styles.content_group}>
+        <span className={styles.select_content}>{this.props.value}</span>
+        <Icon  type="down" theme="outlined" />
+      </div>}
 
         <div style={{ display: this.state.show ? 'block' : 'none' }} className={styles.options}>
           {this.renderChildren()}

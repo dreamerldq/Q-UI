@@ -184,11 +184,18 @@ export default class HuaComponents extends React.Component{
         <HuaButton disabled type="danger">按钮</HuaButton>
         <HuaButton  type="danger">按钮</HuaButton>
                   
-             <HuaSelect value={this.state.currentSelect} defaultValue="lucy" onHandleChange={this.handleChange}>
+             <HuaSelect  
+              style={{width:'300px'}}
+              mode="multiple" 
+              value={this.state.currentSelect} 
+              defaultValue="lucy" 
+              onHandleChange={this.handleChange}>
               <HuaSelect.Option value="jack">Jack</HuaSelect.Option>
               <HuaSelect.Option value="lucy">Lucy</HuaSelect.Option>
               <HuaSelect.Option value="Yiminghe">yiminghe</HuaSelect.Option>
             </HuaSelect>
+
+             
          
      </React.Fragment>
     )
