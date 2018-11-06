@@ -15,6 +15,7 @@ const { Header, Content, Footer } = HuaLayout
 import HuaButton from '../../Component/HuaButton'
 import {Button, Icon} from 'antd'
 import HuaInputNumber from '../../Component/HuaInputNumber'
+import HuaBreadCrumb from '../../Component/HuaBreadCrumb'
 const dataSource = [{
   key: '1',
   name: '胡彦斌',
@@ -203,7 +204,7 @@ export default class HuaComponents extends React.Component{
               <HuaSelect.Option value="lucy">Lucy</HuaSelect.Option>
               <HuaSelect.Option value="Yiminghe">yiminghe</HuaSelect.Option>
             </HuaSelect> */}
-            <HuaInputNumber
+            {/* <HuaInputNumber
               autoFoucs
               defaultValue={20}
               max={100}
@@ -211,9 +212,19 @@ export default class HuaComponents extends React.Component{
               step={5}
               value={this.state.curretnInputNumber}
               onChange={this.handleInputNumber}
-            />
+            /> */}
 
-            
+            <HuaBreadCrumb separator=">">
+              <HuaBreadCrumb.Item>
+                <a href="#">  Application Center</a>
+              </HuaBreadCrumb.Item>
+              <HuaBreadCrumb.Item>
+                <a href="#">  Application List</a>
+              </HuaBreadCrumb.Item>
+              <HuaBreadCrumb.Item>
+                <a href="#"> An Application</a>
+              </HuaBreadCrumb.Item>
+            </HuaBreadCrumb>
              
          
      </React.Fragment>
