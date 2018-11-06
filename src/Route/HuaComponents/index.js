@@ -14,6 +14,7 @@ const {SubMenu, MenuItemGroup} = HuaMenu
 const { Header, Content, Footer } = HuaLayout
 import HuaButton from '../../Component/HuaButton'
 import {Button, Icon} from 'antd'
+import HuaInputNumber from '../../Component/HuaInputNumber'
 const dataSource = [{
   key: '1',
   name: '胡彦斌',
@@ -78,7 +79,8 @@ export default class HuaComponents extends React.Component{
       loading: true,
       dispaly: false,
       currentMenu: 'mail',
-      currentSelect: 'lucy'
+      currentSelect: 'lucy',
+      curretnInputNumber: 10
     }
   }
   handleChange = (value) =>{
@@ -124,6 +126,13 @@ export default class HuaComponents extends React.Component{
   handleDisplay = () => {
     this.setState({
       dispaly: !this.state.dispaly
+    })
+  }
+
+  handleInputNumber = (number) => {
+    console.log("AAAA", number)
+    this.setState({
+        curretnInputNumber: number
     })
   }
   notice = (value) => {
@@ -180,7 +189,7 @@ export default class HuaComponents extends React.Component{
   render(){
     return(
      <React.Fragment>
-        <HuaButton onClick={() => console.log('button')} type="primary">按钮</HuaButton>
+        {/* <HuaButton onClick={() => console.log('button')} type="primary">按钮</HuaButton>
         <HuaButton disabled type="danger">按钮</HuaButton>
         <HuaButton  type="danger">按钮</HuaButton>
                   
@@ -193,8 +202,18 @@ export default class HuaComponents extends React.Component{
               <HuaSelect.Option value="jack">Jack</HuaSelect.Option>
               <HuaSelect.Option value="lucy">Lucy</HuaSelect.Option>
               <HuaSelect.Option value="Yiminghe">yiminghe</HuaSelect.Option>
-            </HuaSelect>
+            </HuaSelect> */}
+            <HuaInputNumber
+              autoFoucs
+              defaultValue={20}
+              max={100}
+              min={0}
+              step={5}
+              value={this.state.curretnInputNumber}
+              onChange={this.handleInputNumber}
+            />
 
+            
              
          
      </React.Fragment>
