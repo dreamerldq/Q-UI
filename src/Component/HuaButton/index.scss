@@ -1,0 +1,31 @@
+.hua_button{
+  line-height: 1.5;
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 0 15px;
+  font-size: 14px;
+  border-radius: 4px;
+  height: 32px;
+  -webkit-transition: all .3s cubic-bezier(.645,.045,.355,1);
+  transition: all .3s cubic-bezier(.645,.045,.355,1);
+  position: relative;
+  -webkit-box-shadow: 0 2px 0 rgba(0,0,0,.015);
+  box-shadow: 0 2px 0 rgba(0,0,0,.015);
+ 
+  border-color: #d9d9d9;
+
+  }
+.hua_button_disable{
+  @extend .hua_button;
+  background: #d9d9d9;
+  color: rgba(0,0,0,.25);
+}
+.hua_button_normal{
+  @extend .hua_button;
+  color: rgba(236, 236, 236, 0.65);
+  background-color: #fff;
+  cursor: pointer;
+}

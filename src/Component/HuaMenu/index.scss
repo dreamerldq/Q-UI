@@ -1,0 +1,36 @@
+.container{
+  display: flex;
+  justify-content: flex-start;
+  padding: 0 50px;
+  color: hsla(0,0%,100%,.65);
+  background: #001529;
+  .menu_item{
+    // min-width: 100px;
+    height: 100%;
+    padding: 0 30px ;
+    display: block;
+    position: relative;
+    // &:hover{
+    // background: rgb(221, 179, 124);
+    // }
+  }
+  .menu_item_activate{
+    @extend .menu_item;
+    background: #1890ff;
+  }
+  .menu_item_normal{
+    @extend .menu_item;
+  }
+}
+.menu_item_group{
+  position: relative;
+  background: black;
+
+}
+.sub_menu_title{
+  position: relative;
+}
+.group_title{
+  width: 100%;
+  background: #091016;
+}

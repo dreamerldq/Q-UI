@@ -1,0 +1,31 @@
+.hua_timeline_item{
+  list-style: none;
+  width: 500px;
+  padding-bottom: 20px;
+  position: relative;
+  display: list-item;
+   .timeline_icon{
+     width: 10px;
+     height: 10px;
+     border-radius: 50%;
+     position: absolute;
+     left: 0;
+     background-color: #fff;
+    //  z-index: 2;
+     border-radius: 100px;
+    border: 2px solid transparent;
+    border-color: #f5222d;
+   }
+   .timeline_line{
+     height: 100%;
+     border-left: 2px solid #e8e8e8;
+     position: absolute;
+     left: 4px;
+     top: 10px;
+    }
+    .timeline_content{
+      margin: 0 0 0 18px;
+      position: relative;
+      top: -6px;
+    }
+}

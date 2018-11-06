@@ -1,0 +1,25 @@
+.hua_layout{
+  box-sizing: border-box;
+  .header{
+    color: #ffffff;
+    background: #7dbcea;
+    height: 64px;
+    line-height: 64px;
+    text-align: center;
+  }
+  .content{
+    background-color: rgba(16, 142, 233, 1);
+    color: #ffffff;
+    min-height: 120px;
+    line-height: 120px;
+    text-align: center;
+  }
+  .footer{
+    background: 7dbcea;
+    line-height: 1.5;
+    padding: 24px 50px;
+    color: #ffffff;
+    text-align: center;
+    background: #7dbcea;
+  }
+}

@@ -1,0 +1,14 @@
+.hua_panel_body{
+  transition: all .3s;
+  max-width: 500px;
+  max-height: 300px;
+  background: rgb(92, 92, 92);
+  border: solid 1px rgb(158, 158, 158);
+}
+.hua_panel_header{
+  border: solid 1px rgb(158, 158, 158);
+  max-width: 500px;
+  height: 50px; 
+  background: rgba(245, 245, 245, 0.85);
+  line-height: 50px;
+}
