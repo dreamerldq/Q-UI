@@ -1,6 +1,7 @@
 import React from 'react';
-import { Icon } from 'antd';
+import { Icon, Button } from 'antd';
 import styles from './index.scss';
+const selectedBackgroundColor = 'rgb(226, 226, 226)'
 
 class HuaSelect extends React.Component {
   constructor(props) {
@@ -21,7 +22,9 @@ class HuaSelect extends React.Component {
   renderChildren = () => {
     return React.Children.map(this.props.children, child => {
       return React.cloneElement(child, {
-        onHandleChange: this.onHandleChange
+        onHandleChange: this.onHandleChange,
+        onHandleBlur: this.onHandleBlur,
+        currentValue: this.props.value
       })
     })
   }
@@ -42,7 +45,7 @@ class HuaSelect extends React.Component {
       <div className={styles.hua_select}>
         <div onClick={this.handleOptions} className={styles.content_group}>
           <span className={styles.select_content}>{this.state.currentValue}</span>
-          <Icon type="down" theme="outlined" />
+          <Icon  type="down" theme="outlined" />
         </div>
 
         <div style={{ display: this.state.show ? 'block' : 'none' }} className={styles.options}>
@@ -59,7 +62,9 @@ const HuaSelectOption = (props) =>{
   }
   return(
     <React.Fragment>
-      <li key={props.value} onClick={onHandleChange}>{props.children}</li>
+      <li key={props.value} 
+        style={{background: props.value == props.currentValue? selectedBackgroundColor : ''}} 
+        onClick={onHandleChange}>{props.children}</li>
     </React.Fragment>
   )
 }

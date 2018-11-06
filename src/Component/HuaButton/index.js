@@ -22,9 +22,8 @@ class HuaButton extends React.Component {
 
   render() {
     const {
-      type, href, target, onClick, disabled, children,
+      type, href, target, onClick, disabled, children, className,
     } = this.props;
-
     const buttonStyles = reactCSS({
       default: {
         button: {
@@ -32,16 +31,16 @@ class HuaButton extends React.Component {
           color: type ? '#fff' : 'rgba(0,0,0,.65)',
         },
       },
-      hover: {
-        button: {
-          background: colors[type].hover,
-        },
-      },
-      click: {
-        button: {
-          background: colors[type].click,
-        },
-      },
+      // hover: {
+      //   button: {
+      //     background: colors[type].hover,
+      //   },
+      // },
+      // click: {
+      //   button: {
+      //     background: colors[type].click,
+      //   },
+      // },
     });
 
 
@@ -51,7 +50,7 @@ class HuaButton extends React.Component {
           <button
               onClick={onClick}
               disabled={disabled}
-              className={disabled ? styles.hua_button_disable : styles.hua_button_normal}
+              className={ className || (disabled ? styles.hua_button_disable : styles.hua_button_normal)}
               style={buttonStyles.button}
               >
               {children}

@@ -77,11 +77,15 @@ export default class HuaComponents extends React.Component{
       activeKey: null,
       loading: true,
       dispaly: false,
-      currentMenu: 'mail'
+      currentMenu: 'mail',
+      currentSelect: 'lucy'
     }
   }
   handleChange = (value) =>{
     console.log("Select Value:", value)
+    this.setState({
+      currentSelect: value
+    })
   }
   handleCurrentPage = (page) =>{
    
@@ -179,6 +183,13 @@ export default class HuaComponents extends React.Component{
         <HuaButton onClick={() => console.log('button')} type="primary">按钮</HuaButton>
         <HuaButton disabled type="danger">按钮</HuaButton>
         <HuaButton  type="danger">按钮</HuaButton>
+                  
+             <HuaSelect value={this.state.currentSelect} defaultValue="lucy" onHandleChange={this.handleChange}>
+              <HuaSelect.Option value="jack">Jack</HuaSelect.Option>
+              <HuaSelect.Option value="lucy">Lucy</HuaSelect.Option>
+              <HuaSelect.Option value="Yiminghe">yiminghe</HuaSelect.Option>
+            </HuaSelect>
+         
      </React.Fragment>
     )
   }
@@ -218,13 +229,7 @@ export default class HuaComponents extends React.Component{
   //   return(
   //     <HuaLoading loading={this.state.loading}>
       
-          
-  //           <HuaSelect defaultValue="lucy" onHandleChange={this.handleChange}>
-  //             <HuaSelect.Option value="jack">Jack</HuaSelect.Option>
-  //             <HuaSelect.Option value="lucy">Lucy</HuaSelect.Option>
-  //             <HuaSelect.Option value="Yiminghe">yiminghe</HuaSelect.Option>
-  //           </HuaSelect>
-         
+
           
           
   //           <HuaTable
