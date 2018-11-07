@@ -42,18 +42,18 @@ export default class HuaTable extends React.Component {
            dataSources: newDataSource,
            filterDataSources: newDataSource
          })
-        }else{
+        }else if(sorted === 'asc'){
           this.setState({
             dataSources: [...newDataSource.reverse()],
             filterDataSources: [...newDataSource.reverse()]
           })
+        }else{
+          const newDataSource = [...this.props.dataSource.sort((a,b) => a.index - b.index)]
+          this.setState({
+            dataSources: newDataSource,
+            filterDataSources: newDataSource
+          })
         }
-      }else{
-        const newDataSource = [...this.props.dataSource.sort((a,b) => a.index - b.index)]
-        this.setState({
-          dataSources: newDataSource,
-          filterDataSources: newDataSource
-        })
       }
      
     })
