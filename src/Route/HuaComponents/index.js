@@ -34,6 +34,7 @@ const dataSource = [{
   name: '吴亦凡',
   age: 20,
   address: '西湖区湖底公园1号',
+  company: '佳格新天地'
 }];
 
 const columns = (sortedInfo) =>  [
@@ -78,7 +79,11 @@ const columns = (sortedInfo) =>  [
   title: '公司',
   dataIndex: 'company',
   key: 'company',
-  width:200
+  width:200,
+  filters: [
+    { text: '心跳时空', value: 'xintiao' },
+    { text: '佳格新天地', value: 'jiage' },
+  ]
 },
  {
   title: '住址',

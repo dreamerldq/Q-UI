@@ -1,3 +1,4 @@
+@import '../../common.scss';
 .hua_table{
   position: relative;
   min-height: 100px;
@@ -41,3 +42,13 @@
 //   justify-content: center;
 //   align-content: center;
 // }
+.filters{
+  position: relative;
+  .filters_item{
+    width: 100px;
+    position: absolute;
+    display: flex;
+    color: $default-black;
+    flex-direction: column;
+  }
+}
