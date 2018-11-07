@@ -6,16 +6,19 @@
     border-bottom: 1px solid #ebedf0;
   }
   .table_th{
-    background: rgba(0,0,0,.02);
+    background:#fafafa;
+    padding: 16px;
   }
   .table_th_solid{
-    background: rgba(0,0,0,.02);
+    @extend .table_th;
     border: 1px solid #ebedf0;
   }
   .table_td{
     background: rgba(0,0,0,.01);
+    padding: 16px;
   }
   .table_td_solid{
+    padding: 16px;
     background: rgba(0,0,0,.01);
     border: 1px solid #ebedf0;
   }
@@ -32,3 +35,9 @@
     color: rgb(255, 107, 107);
   }
 }
+// .sorted_button{
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-content: center;
+// }

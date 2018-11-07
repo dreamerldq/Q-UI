@@ -1,7 +1,9 @@
+@import '../../common.scss';
 .tabs_item{
   width: 500px;
   height: 200px;
-  background: rgb(255, 236, 236);
+  background: #fff;
+
   float: left;
 }
 .tabs{
@@ -20,17 +22,21 @@
 .tabs_header{
   width: 500px;
   display: flex;
-  justify-content: space-around;
+  color: $default-balck;
+  justify-content: space-between;
+  border-bottom: 1px solid $default-balck;
+  margin-bottom: 10px;
   .tabs_header_block{
+   
     width: 100px;
     height: 40px;
-    border-bottom: solid 2px rgb(231, 231, 231);
+  
     text-align: center;
     line-height: 40px;
   }
   .tabs_header_block_active{
     @extend .tabs_header_block;
-    border-bottom: solid 2px rgb(255, 1, 1);
+    border-bottom: solid 2px $blue;
 
   }
 }

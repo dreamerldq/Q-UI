@@ -6,7 +6,6 @@ export default class HuaLoading extends React.Component{
   }
   render(){
     const {loading} = this.props
-    console.log("AAAA", this.props.children)
     if(loading){
       return( 
       <div className={styles.loading}>

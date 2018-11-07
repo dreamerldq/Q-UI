@@ -35,7 +35,7 @@ export default class HuaPagination extends React.Component{
     const pageCount = Array(Math.ceil(total/pageSize)).fill('1')
     return(
       <div className={styles.pagination}>
-      <Icon onClick={this.handleLeft.bind(this, 'left')} type="left" theme="outlined" />
+      <div className={styles.page_block}><Icon  onClick={this.handleLeft.bind(this, 'left')} type="left" theme="outlined" /></div>
         <div className={styles.page_blocks}>
           {
             pageCount.map((item, index) => {
@@ -43,10 +43,10 @@ export default class HuaPagination extends React.Component{
             })
           }
         </div>
-        <Icon onClick={this.handleLeft.bind(this, 'right')} type="right" theme="outlined" />
+        <div className={styles.page_block}><Icon onClick={this.handleLeft.bind(this, 'right')} type="right" theme="outlined" /></div>
         <span>当前页数{current}</span>
         <span>总数: {total}</span>
-        <HuaSelect defaultValue={10} onHandleChange={this.handleChange}>
+        <HuaSelect style={{width: '100px'}} value={this.props.pageSize} defaultValue={10} onHandleChange={this.handleChange}>
            <HuaSelect.Option value={10}>10条/页</HuaSelect.Option>
            <HuaSelect.Option value={20}>20条/页</HuaSelect.Option>
         </HuaSelect>

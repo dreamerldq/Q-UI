@@ -1,0 +1,71 @@
+/* colors
+-------------------------- */
+
+$blue: #1890ff;
+$success: #67C23A;
+$warning: #E6A23C;
+$danger: #F56C6C;
+$info: #909399;
+$default-balck: rgba(0,0,0,.65);
+
+/* methods
+-------------------------- */
+// 背景图片地址和大小
+@mixin bg($url) {
+  background-image: url($url);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+// 定位上下左右居中
+@mixin center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// 定位上下居中
+@mixin center_t {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+// 定位左右居中
+@mixin center_l {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+// 宽高
+@mixin wh($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+// 字体大小，颜色
+@mixin font_sc($size, $color) {
+  font-size: $size;
+  color: $color;
+}
+
+// flex 布局和 子元素 对其方式
+@mixin flex_j($type: space-between) {
+  display: flex;
+  justify-content: $type;
+}
+
+@mixin flex_aj($a_type: center, $j_type: center) {
+  display: flex;
+  align-items: $a_type;
+  justify-content: $j_type
+}
+
+@mixin clip_line($count){
+  text-overflow: ellipsis;
+  -webkit-line-clamp: $count;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
