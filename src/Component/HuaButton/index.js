@@ -59,4 +59,4 @@ class HuaButton extends React.Component {
     );
   }
 }
-export default HuaButton;
+module.exports = HuaButton;

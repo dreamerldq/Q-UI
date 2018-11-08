@@ -4,9 +4,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpackConfig = {
   entry: ['babel-polyfill', path.join(__dirname, '/src/index.js')],
   output: {
-    path: path.join(__dirname, 'build'),
-    filename: 'bundle.js',
+    path: path.join(__dirname, 'lib'),
+    filename: 'index.js',
     publicPath: '/',
+    // libraryTarget: 'commonjs2', // 上传组件到npm时使用，将入口文件以module.exports的方式导出
   },
   module: {
     rules: [

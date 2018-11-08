@@ -51,4 +51,5 @@ class EditInput extends React.Component{
     )
   }
 }
-export default EditInput
+// export default EditInput
+module.exports = EditInput
