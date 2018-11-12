@@ -24,13 +24,13 @@ class MenuItem extends React.Component{
     
   }
   handleMenuItem = (value) => {
-    this.props.handleMenuItem(value)
+    this.props.handleMenuItem &&  this.props.handleMenuItem(value)
   }
   render(){
     const { selectedKeys, value, handleMenuItem } = this.props
     return(
       <div onClick={this.handleMenuItem.bind(this, value)} 
-        className={selectedKeys[0] === value ? styles.menu_item_activate : styles.menu_item_normal}>
+        className={selectedKeys && selectedKeys[0] === value ? styles.menu_item_activate : styles.menu_item_normal}>
         {this.props.children}
       </div>
     )

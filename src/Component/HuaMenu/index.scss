@@ -1,11 +1,12 @@
 .container{
   display: flex;
   justify-content: flex-start;
+  flex-direction: row;
   padding: 0 50px;
   color: hsla(0,0%,100%,.65);
   background: #001529;
   .menu_item{
-    // min-width: 100px;
+    min-width: 100px;
     height: 100%;
     padding: 0 30px ;
     display: block;

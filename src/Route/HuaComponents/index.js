@@ -18,6 +18,7 @@ import {Button, Icon} from 'antd'
 import HuaInputNumber from '../../Component/HuaInputNumber'
 import HuaBreadCrumb from '../../Component/HuaBreadCrumb'
 import HuaSlider from '../../Component/HuaSlider'
+import HuaCheckbox from '../../Component/HuaCheckbox'
 const props = {
   name: 'file',
   accept: 'image/*',
@@ -29,106 +30,10 @@ const props = {
 import { Upload, message } from 'antd';
 import HuaUpload from '../../Component/HuaUpload'
 
-const dataSourceTransfer=
-      [
-        {
-          title: 'title1',
-          key: 'title1',
-          index: 0
-        },
-        {
-          title: 'title2',
-          key: 'title2',
-          index: 1
-        },
-        {
-          title: 'title3',
-          key: 'title3',
-          index: 2
-        },
-        {
-          title: 'title4',
-          key: 'title4',
-          index: 3
-        }
-      ]
-    
-const dataSource = [{
-  key: '1',
-  name: '胡彦斌',
-  age: 32,
-  address: '西湖区湖底公园1号',
-  company: '心跳时空'
-}, {
-  key: '2',
-  name: '易烊千玺',
-  age: 42,
-  address: '西湖区湖底公园1号',
-  company: '心跳时空'
-},
-{
-  key: '3',
-  name: '吴亦凡',
-  age: 20,
-  address: '西湖区湖底公园1号',
-  company: '佳格新天地'
-}];
 
-const columns = (sortedInfo) =>  [
-  {
-    title: '序号',
-    dataIndex: 'key',
-    key: 'key',
-    render: (text, record, index) => {
-      
-      return(
-        <span>
-        {text}
-      </span>
-      )
-    },
-    width: 100
-  },
-  {
-  title: '姓名',
-  dataIndex: 'name',
-  key: 'name',
-  render: (text, record, index) => {
-    return(
-      <span style={{color:'red'}}>
-      {text}
-    </span>
-    )
-  },
-  sorter: (a,b) => a.name.length - b.name.length,
-  sortOrder: sortedInfo.columnKey === 'name' && sortedInfo.order,
-  width: 100
-},
- {
-  title: '年龄',
-  dataIndex: 'age',
-  key: 'age',
-  width: 100,
-  sorter: (a,b) => a.age - b.age,
-  sortOrder: sortedInfo.columnKey === 'age' && sortedInfo.order,
-},
-{
-  title: '公司',
-  dataIndex: 'company',
-  key: 'company',
-  width:200,
-  filters: [
-    { text: '心跳时空', value: 'xintiao' },
-    { text: '佳格新天地', value: 'jiage' },
-  ]
-},
- {
-  title: '住址',
-  dataIndex: 'address',
-  key: 'address',
-  width: 150
-},
-];
+    
+
+
 export default class HuaComponents extends React.Component{
   constructor(props){
     super(props)
@@ -148,18 +53,8 @@ export default class HuaComponents extends React.Component{
       selectedKeys:[]
     }
   }
-  handleTableChange = (sorter) => {
-    console.log('Various parameters',sorter);
-    this.setState({
-      sortedInfo: sorter,
-    });
-  }
-  handleChange = (value) =>{
-    console.log("Select Value:", value)
-    this.setState({
-      currentSelect: value
-    })
-  }
+
+ 
   handleCurrentPage = (page) =>{
    
     this.setState({
@@ -212,11 +107,6 @@ export default class HuaComponents extends React.Component{
     })
   }
 
-  handleInputNumber = (number) => {
-    this.setState({
-        curretnInputNumber: number
-    })
-  }
   handleSlider = (value) =>{
     this.setState({
       sliderValue: value
@@ -276,29 +166,7 @@ export default class HuaComponents extends React.Component{
   // render(){
   //   return(
   //    <React.Fragment>
-  //       {/* <HuaButton onClick={() => console.log('button')} type="primary">按钮</HuaButton>
-  //       <HuaButton disabled type="danger">按钮</HuaButton>
-  //       <HuaButton  type="danger">按钮</HuaButton>
-                  
-  //            <HuaSelect  
-  //             style={{width:'300px'}}
-  //             mode="multiple" 
-  //             value={this.state.currentSelect} 
-  //             defaultValue="lucy" 
-  //             onHandleChange={this.handleChange}>
-  //             <HuaSelect.Option value="jack">Jack</HuaSelect.Option>
-  //             <HuaSelect.Option value="lucy">Lucy</HuaSelect.Option>
-  //             <HuaSelect.Option value="Yiminghe">yiminghe</HuaSelect.Option>
-  //           </HuaSelect> */}
-            // {/* <HuaInputNumber
-            //   autoFoucs
-            //   defaultValue={20}
-            //   max={100}
-            //   min={0}
-            //   step={5}
-            //   value={this.state.curretnInputNumber}
-            //   onChange={this.handleInputNumber}
-            // /> */}
+  
 
             // <HuaBreadCrumb separator=">">
             //   <HuaBreadCrumb.Item>
@@ -352,49 +220,12 @@ export default class HuaComponents extends React.Component{
     
     return(
       <HuaLoading >
-        {/* <HuaSlider
-          max={100}
-          min={0}
-          value={this.state.sliderValue}
-          onChange={this.handleSlider}
-        /> */}
-        <HuaTransfer
-          dataSource={dataSourceTransfer}
-          targetKeys={targetKeys}
-          selectedKeys={selectedKeys}
-          onChange={this.handleTransfer}
-          render={item => item.title}
-          titles={['Source', 'Target']}
-        />
-            {/* <HuaTable
-              dataSource={dataSource}
-              columns={columns(this.state.sortedInfo)}
-              bordered
-              onChange={this.handleTableChange}
-              local={{
-                emptyText: '暂无数据'
-              }}
-              />
+      
+      
+        <HuaCheckbox>
           
-            <HuaPagination
-             onChange={this.handleCurrentPage}
-             onShowSizeChange={this.handleSizeChange}
-             total={40}
-             pageSize={pageSize}
-             current={current}
+        </HuaCheckbox>
            
-            ></HuaPagination>
-            <HuaTabs activeKey={this.state.currentTabs} onChange={this.handleTabs}>
-               <HuaTabs.Item tab="一" key="1">
-                  <div>第一页</div>
-               </HuaTabs.Item >
-               <HuaTabs.Item tab="二" key="2">
-                  <div>第二页</div>
-               </HuaTabs.Item>
-               <HuaTabs.Item tab="三" key="3">
-                  <div>第三页</div>
-               </HuaTabs.Item>
-            </HuaTabs>
 
             <HuaCollapse activeKey={this.state.activeKey} onChange={this.handlePanel}>
                <HuaCollapse.Panel key="1" header="This is panel  header 1" value="1">
@@ -409,17 +240,7 @@ export default class HuaComponents extends React.Component{
                <p>面板三,面板三,面板三,面板三,面板三,面板三</p>
                </HuaCollapse.Panel>
             </HuaCollapse>
-             <HuaTimeLine>
-                <HuaTimeLine.Item key="1" color="green">
-                  <p>Create a services site 2015-09-01</p>
-                  <p>Create a services site 2015-09-01</p>
-                  <p>Create a services site 2015-09-01</p>
-                  <p>Create a services site 2015-09-01</p>
-                  </HuaTimeLine.Item>
-                <HuaTimeLine.Item key="2">Solve initial network problems 2015-09-01</HuaTimeLine.Item>
-                <HuaTimeLine.Item key="3">Technical testing 2015-09-01</HuaTimeLine.Item>
-                <HuaTimeLine.Item key="4">Network problems being solved 2015-09-01</HuaTimeLine.Item>
-             </HuaTimeLine>
+             
              <Button onClick={this.notice.bind(this, 1)}>按钮1</Button>
              <Button onClick={this.notice.bind(this, 2)}>按钮2</Button>
              <Button onClick={this.notice.bind(this, 3)}>按钮3</Button>

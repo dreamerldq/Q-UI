@@ -46,7 +46,7 @@ class HuaButton extends React.Component {
 
     return (
 
-        <a href={href} target={href && target}>
+    // <a href={href} target={href && target}>
           <button
               onClick={onClick}
               disabled={disabled}
@@ -55,7 +55,7 @@ class HuaButton extends React.Component {
               >
               {children}
           </button>
-        </a>
+    // </a>
     );
   }
 }

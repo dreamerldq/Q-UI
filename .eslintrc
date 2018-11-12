@@ -3,6 +3,13 @@
     "eslint-config-airbnb-base",
     "plugin:react/recommended"
   ],
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "ecmaFeatures": {
+      "jsx": true,
+      "experimentalObjectRestSpread": true
+    }
+  },
   "rules": {
     "no-console": "off",
     "no-unused-vars": [0],
@@ -17,7 +24,8 @@
     "react/no-unescaped-entities": [0],
     "import/prefer-default-export": [0],
     "import/no-named-as-default-member":[0],
-    "import/no-named-as-default": [0]
+    "import/no-named-as-default": [0],
+    "import/no-unresolved": [0]
   },
   "globals": {
     "window": true,
