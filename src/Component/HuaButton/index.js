@@ -1,5 +1,7 @@
 import React from 'react';
-import reactCSS, { hover } from 'reactcss';
+
+import injectSheet from 'react-jss';
+import classnames from 'classnames';
 import styles from './index.scss';
 
 const colors = {
@@ -15,40 +17,35 @@ const colors = {
   },
 
 };
+
+const myStyles = {
+  myButton: {
+    background: ({ disabled, type }) => (disabled ? '#d9d9d9' : type ? colors[type].default : '#fff'),// eslint-disable-line
+    '&:hover': {
+      background: ({ disabled, type }) => (disabled ? '#d9d9d9' : colors[type] ? colors[type].hover : '#fff'),// eslint-disable-line
+    },
+    '&:active': {
+      background: ({ disabled, type }) => (disabled ? '#d9d9d9' : colors[type] ? colors[type].click : '#fff'),// eslint-disable-line
+    },
+  },
+};
 class HuaButton extends React.Component {
   constructor(props) {
     super(props);
   }
 
+
   render() {
     const {
-      type, href, target, onClick, disabled, children, className,
+      type, href, target, onClick, disabled, children, className, classes,
     } = this.props;
-    const buttonStyles = reactCSS({
-      default: {
-        button: {
-          // background: disabled ? '#d9d9d9' : type ? colors[type].default : '#fff', // eslint-disable-line
-          // color: type ? '#fff' : 'rgba(0,0,0,.65)',
-          background: 'red',
-        },
-      },
-      hover: {
-        button: {
-          // background: colors[type] ? colors[type].hover : '#fff',
-          background: '#333',
-        },
-      },
-    });
-
-
     return (
 
     // <a href={href} target={href && target}>
           <button
               onClick={onClick}
               disabled={disabled}
-              // className={ className || (disabled ? styles.hua_button_disable : styles.hua_button_normal)}
-              style={buttonStyles.button}
+              className={disabled ? classnames(styles.hua_button_disable, classes.myButton) : classnames(styles.hua_button_normal, classes.myButton)}
               >
               {children}
           </button>
@@ -56,4 +53,4 @@ class HuaButton extends React.Component {
     );
   }
 }
-export default hover(HuaButton);
+export default injectSheet(myStyles)(HuaButton);

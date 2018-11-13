@@ -43,8 +43,9 @@ class Button extends React.Component{
   render(){
     return(
       <React.Fragment>
-        <HuaButton disabled type="danger">按钮</HuaButton>
-        <HuaButton onClick={() =>console.log('button')} type="danger">按钮</HuaButton>
+        <HuaButton  type="danger">按钮</HuaButton>
+        <HuaButton  disabled>按钮</HuaButton>
+        <HuaButton onClick={() =>console.log('button')} type="primary">按钮</HuaButton>
          <HuaInputNumber
               autoFoucs
               defaultValue={20}
