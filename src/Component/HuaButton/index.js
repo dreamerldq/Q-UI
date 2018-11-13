@@ -21,11 +21,13 @@ const colors = {
 const myStyles = {
   myButton: {
     background: ({ disabled, type }) => (disabled ? '#d9d9d9' : type ? colors[type].default : '#fff'),// eslint-disable-line
+    color: ({ type }) => type && '#fff',
     '&:hover': {
       background: ({ disabled, type }) => (disabled ? '#d9d9d9' : colors[type] ? colors[type].hover : '#fff'),// eslint-disable-line
     },
     '&:active': {
       background: ({ disabled, type }) => (disabled ? '#d9d9d9' : colors[type] ? colors[type].click : '#fff'),// eslint-disable-line
+      color: ({ type }) => type && '#fff',
     },
   },
 };

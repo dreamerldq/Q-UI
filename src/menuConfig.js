@@ -23,5 +23,9 @@ const menuConfig = [
     name: '标签页',
     path: '/tabs',
   },
+  {
+    name: '进度条',
+    path: '/progress',
+  },
 ];
 export default menuConfig;

@@ -3,6 +3,7 @@ import HuaSelect from '../../Component/HuaSelect'
 import HuaInputNumber from '../../Component/HuaInputNumber'
 import HuaUpload from '../../Component/HuaUpload'
 import {Icon} from 'antd'
+import HuaDrawer from '../../Component/HuaDrawer'
 import React from 'react'
 const props = {
   name: 'file',
@@ -17,7 +18,8 @@ class Button extends React.Component{
     super(props)
     this.state = {
       curretnInputNumber: 10,
-      currentSelect: 'jack'
+      currentSelect: 'jack',
+      dispaly: false
     }
   }
 
@@ -45,6 +47,7 @@ class Button extends React.Component{
       <React.Fragment>
         <HuaButton  type="danger">按钮</HuaButton>
         <HuaButton  disabled>按钮</HuaButton>
+        <HuaButton>按钮</HuaButton>
         <HuaButton onClick={() =>console.log('button')} type="primary">按钮</HuaButton>
          <HuaInputNumber
               autoFoucs
@@ -73,6 +76,12 @@ class Button extends React.Component{
               >
                 <span><Icon type="upload"/>Click to Upload</span>
               </HuaUpload>
+
+
+                <HuaDrawer dispaly={this.state.dispaly}>
+               抽屉
+             </HuaDrawer>
+             <HuaButton onClick={this.handleDisplay}>显示</HuaButton>
     </React.Fragment>
     )
   }

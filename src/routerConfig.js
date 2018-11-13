@@ -4,6 +4,7 @@ import Button from './Route/Button';
 import TimeLine from './Route/TimeLine';
 import Table from './Route/Table';
 import Transfer from './Route/Transfer';
+import Progress from './Route/Progress';
 import Notification from './Route/Notification';
 import Tabs from './Route/Tabs';
 
@@ -36,6 +37,11 @@ const routerConfig = [
   {
     path: '/tabs',
     component: Tabs,
+    layout: Layout,
+  },
+  {
+    path: '/progress',
+    component: Progress,
     layout: Layout,
   },
 ];

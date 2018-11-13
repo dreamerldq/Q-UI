@@ -167,21 +167,9 @@ export default class HuaComponents extends React.Component{
 
            
              
-             <HuaDrawer dispaly={this.state.dispaly}>
-               抽屉
-             </HuaDrawer>
-             <Button onClick={this.handleDisplay}>显示</Button> */}
+           
              </HuaLoading>
-  //     <Upload {...props}>
-  //   <Button>
-  //     <Icon type="upload" /> Click to Upload
-  //   </Button>
-  // </Upload>
-  // <HuaUpload {...props} 
-  //  onChange={this.handleUploadChange}
-  // >
-  //   <span><Icon type="upload"/>Click to Upload</span>
-  // </HuaUpload>
+  
     )
   }
 }
