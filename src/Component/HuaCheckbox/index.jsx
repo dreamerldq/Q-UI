@@ -7,7 +7,8 @@ export default class HuaCheckbox extends React.Component{
   render(){
     return(
       <div className={styles.container}>
-        <input type="checkbox"/>
+        <input onChange={this.props.onChange}  type="checkbox"/>
+        <span style={{color: 'black'}}>{this.props.children}</span>
       </div>
     )
   }

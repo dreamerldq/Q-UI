@@ -1,7 +1,17 @@
 import HuaButton from '../../Component/HuaButton'
 import HuaSelect from '../../Component/HuaSelect'
 import HuaInputNumber from '../../Component/HuaInputNumber'
+import HuaUpload from '../../Component/HuaUpload'
+import {Icon} from 'antd'
 import React from 'react'
+const props = {
+  name: 'file',
+  accept: 'image/*',
+  action: '//jsonplaceholder.typicode.com/posts/',
+  headers: {
+    authorization: 'authorization-text',
+  },
+};
 class Button extends React.Component{
   constructor(props){
     super(props)
@@ -15,6 +25,14 @@ class Button extends React.Component{
     this.setState({
         curretnInputNumber: number
     })
+  }
+  handleUploadChange = (file) =>{
+    if(file.file.status === 'done'){
+      message.success(`${file.file.name}上传成功`)
+    }
+    if(file.file.status === 'error'){
+      message.error(`${file.file.name}上传失败`)
+    }
   }
   handleChange = (value) =>{
     console.log("Select Value:", value)
@@ -47,6 +65,13 @@ class Button extends React.Component{
               <HuaSelect.Option value="lucy">Lucy</HuaSelect.Option>
               <HuaSelect.Option value="Yiminghe">yiminghe</HuaSelect.Option>
             </HuaSelect>
+
+
+              <HuaUpload {...props} 
+              onChange={this.handleUploadChange}
+              >
+                <span><Icon type="upload"/>Click to Upload</span>
+              </HuaUpload>
     </React.Fragment>
     )
   }

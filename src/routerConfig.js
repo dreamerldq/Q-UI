@@ -4,6 +4,8 @@ import Button from './Route/Button';
 import TimeLine from './Route/TimeLine';
 import Table from './Route/Table';
 import Transfer from './Route/Transfer';
+import Notification from './Route/Notification';
+import Tabs from './Route/Tabs';
 
 const routerConfig = [
   {
@@ -24,6 +26,16 @@ const routerConfig = [
   {
     path: '/transfer',
     component: Transfer,
+    layout: Layout,
+  },
+  {
+    path: '/notice',
+    component: Notification,
+    layout: Layout,
+  },
+  {
+    path: '/tabs',
+    component: Tabs,
     layout: Layout,
   },
 ];

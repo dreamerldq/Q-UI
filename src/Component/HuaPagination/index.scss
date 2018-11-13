@@ -1,8 +1,10 @@
+@import '../../common.scss';
 .pagination{
   display: flex;
   align-items: center;
   justify-content: flex-start;
   flex-direction: row;
+  color: $default-black;
   .page_blocks{
     display: flex;
     align-items: center;
@@ -10,6 +12,7 @@
 
   }
   .page_block{
+    color: $default-black;
     margin-right: 5px;
     border-radius: 4px;
     width: 32px;

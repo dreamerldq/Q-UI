@@ -3,22 +3,26 @@
   position: relative;
   min-height: 100px;
   .table_tr{
+    color: $default-black;
     border-top: 1px solid #ebedf0;
     border-bottom: 1px solid #ebedf0;
   }
   .table_th{
     background:#fafafa;
     padding: 16px;
+    color: $default-black;
   }
   .table_th_solid{
     @extend .table_th;
     border: 1px solid #ebedf0;
   }
   .table_td{
+    color: $default-black;
     background: rgba(0,0,0,.01);
     padding: 16px;
   }
   .table_td_solid{
+    color: $default-black;
     padding: 16px;
     background: rgba(0,0,0,.01);
     border: 1px solid #ebedf0;

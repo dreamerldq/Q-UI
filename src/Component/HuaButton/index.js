@@ -1,5 +1,5 @@
 import React from 'react';
-import reactCSS from 'reactcss';
+import reactCSS, { hover } from 'reactcss';
 import styles from './index.scss';
 
 const colors = {
@@ -27,20 +27,17 @@ class HuaButton extends React.Component {
     const buttonStyles = reactCSS({
       default: {
         button: {
-          background: disabled ? '#d9d9d9' : type ? colors[type].default : '#fff', // eslint-disable-line
-          color: type ? '#fff' : 'rgba(0,0,0,.65)',
+          // background: disabled ? '#d9d9d9' : type ? colors[type].default : '#fff', // eslint-disable-line
+          // color: type ? '#fff' : 'rgba(0,0,0,.65)',
+          background: 'red',
         },
       },
-      // hover: {
-      //   button: {
-      //     background: colors[type].hover,
-      //   },
-      // },
-      // click: {
-      //   button: {
-      //     background: colors[type].click,
-      //   },
-      // },
+      hover: {
+        button: {
+          // background: colors[type] ? colors[type].hover : '#fff',
+          background: '#333',
+        },
+      },
     });
 
 
@@ -50,7 +47,7 @@ class HuaButton extends React.Component {
           <button
               onClick={onClick}
               disabled={disabled}
-              className={ className || (disabled ? styles.hua_button_disable : styles.hua_button_normal)}
+              // className={ className || (disabled ? styles.hua_button_disable : styles.hua_button_normal)}
               style={buttonStyles.button}
               >
               {children}
@@ -59,4 +56,4 @@ class HuaButton extends React.Component {
     );
   }
 }
-module.exports = HuaButton;
+export default hover(HuaButton);

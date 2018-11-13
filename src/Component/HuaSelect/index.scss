@@ -1,6 +1,8 @@
+@import '../../common.scss';
 .hua_select{
   position: relative;
   min-height: 32px;
+  color: $default-black;
   .content_group_multiple{
     height: auto;
     border-radius: 4px;

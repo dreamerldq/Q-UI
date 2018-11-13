@@ -2,6 +2,7 @@ import React from 'react'
 import styles from './index.scss'
 import HuaButton from '../HuaButton'
 import { Icon, Checkbox } from 'antd'
+import HuaCheckbox from '../HuaCheckbox'
 export default class HuaTransfer extends React.Component{
   constructor(props){
     super(props)
@@ -75,6 +76,7 @@ export default class HuaTransfer extends React.Component{
     this.props.onChange(direction, selectedKeys)
   }
   handleItem = (key, direction) => {
+    console.log("AAAA", key)
     if(direction === 'right'){
       this.setState({
         targetSelectedKeys: [...this.state.targetSelectedKeys, key]
@@ -98,7 +100,7 @@ export default class HuaTransfer extends React.Component{
             <div className={styles.origin}>
             {
               originData.map((item)=>{
-                return <Checkbox key={item.key} onChange={this.handleItem.bind(this,item.key, 'right')}>{item.title}</Checkbox>
+                return <HuaCheckbox key={item.key} onChange={this.handleItem.bind(this,item.key, 'right')}>{item.title}</HuaCheckbox>
               })
             }
           </div>
@@ -118,7 +120,7 @@ export default class HuaTransfer extends React.Component{
             <div className={styles.target}>
           {
               targetData.map((item)=>{
-                return <Checkbox key={item.key} onChange={this.handleItem.bind(this,item.key, 'left')}>{this.props.render(item)}</Checkbox>
+                return <HuaCheckbox key={item.key} onChange={this.handleItem.bind(this,item.key, 'left')}>{this.props.render(item)}</HuaCheckbox>
               })
             }
           </div>

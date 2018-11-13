@@ -15,5 +15,13 @@ const menuConfig = [
     name: '穿梭框',
     path: '/transfer',
   },
+  {
+    name: '全局提示',
+    path: '/notice',
+  },
+  {
+    name: '标签页',
+    path: '/tabs',
+  },
 ];
 export default menuConfig;

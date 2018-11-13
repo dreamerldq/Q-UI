@@ -4,7 +4,6 @@ import HuaTable from '../../Component/HuaTable'
 import HuaPagination from '../../Component/HuaPagination'
 import HuaTabs from '../../Component/HuaTabs'
 import HuaCollapse from '../../Component/HuaCollapse'
-import notification from '../../Component/HuaNotification'
 import HuaTimeLine from '../../Component/HuaTimeline'
 import HuaDrawer from '../../Component/HuaDrawer'
 import HuaLoading from '../../Component/HuaLoading'
@@ -93,13 +92,7 @@ export default class HuaComponents extends React.Component{
         targetKeys:  selectedKeys
       })
   }
-  handlePanel = (tab) => {
-    this.setState({
-      activeKey: tab
-    }, () => {
-      console.log("zzz",this.state.activeKey)
-    })
-  }
+ 
 
   handleDisplay = () => {
     this.setState({
@@ -112,50 +105,7 @@ export default class HuaComponents extends React.Component{
       sliderValue: value
     })
   }
-  notice = (value) => {
-    switch(value){
-      case 1:
-      notification.open({
-        message: 'Notification Title 1',
-        description: 'I will never close automatically. I will be close automatically. I will never close automatically.',
-        duration: 3
-      })
-      break;
-
-      case 2:
-      notification.open({
-        message: 'Notification Title 2',
-        description: 'I will never close automatically. I will be close automatically. I will never close automatically.',
-        duration: 3
-      })
-      break;
-
-      case 3:
-      notification.open({
-        message: 'Notification Title 3',
-        description: 'I will never close automatically. I will be close automatically. I will never close automatically.',
-        duration: 3
-      })
-      break;
-
-      case 4:
-      notification.open({
-        message: 'Notification Title 4',
-        description: 'I will never close automatically. I will be close automatically. I will never close automatically.',
-        duration: 3
-      })
-      break;
-
-      case 5:
-      notification.open({
-        message: 'Notification Title 5',
-        description: 'I will never close automatically. I will be close automatically. I will never close automatically.',
-        duration: 3
-      })
-      break;
-    }
-    
-  }
+  
   componentDidMount(){
     setTimeout(() => {
       this.setState({
@@ -168,17 +118,7 @@ export default class HuaComponents extends React.Component{
   //    <React.Fragment>
   
 
-            // <HuaBreadCrumb separator=">">
-            //   <HuaBreadCrumb.Item>
-            //     <a href="#">  Application Center</a>
-            //   </HuaBreadCrumb.Item>
-            //   <HuaBreadCrumb.Item>
-            //     <a href="#">  Application List</a>
-            //   </HuaBreadCrumb.Item>
-            //   <HuaBreadCrumb.Item>
-            //     <a href="#"> An Application</a>
-            //   </HuaBreadCrumb.Item>
-            // </HuaBreadCrumb>
+            
              
          
   //    </React.Fragment>
@@ -222,31 +162,11 @@ export default class HuaComponents extends React.Component{
       <HuaLoading >
       
       
-        <HuaCheckbox>
-          
-        </HuaCheckbox>
+       
            
 
-            <HuaCollapse activeKey={this.state.activeKey} onChange={this.handlePanel}>
-               <HuaCollapse.Panel key="1" header="This is panel  header 1" value="1">
-                  <p>面板一,面板一,面板一,面板一,面板一,面板一</p>
-               </HuaCollapse.Panel>
-
-               <HuaCollapse.Panel key="2" header="This is panel  header 2" value="2">
-               <p>面板二,面板二,面板二,面板二,面板二,面板二</p>
-               </HuaCollapse.Panel>
-
-               <HuaCollapse.Panel key="3" header="This is panel  header 3" value="3">
-               <p>面板三,面板三,面板三,面板三,面板三,面板三</p>
-               </HuaCollapse.Panel>
-            </HuaCollapse>
+           
              
-             <Button onClick={this.notice.bind(this, 1)}>按钮1</Button>
-             <Button onClick={this.notice.bind(this, 2)}>按钮2</Button>
-             <Button onClick={this.notice.bind(this, 3)}>按钮3</Button>
-             <Button onClick={this.notice.bind(this, 4)}>按钮4</Button>
-             <Button onClick={this.notice.bind(this, 5)}>按钮5</Button>
-             <Button onClick={this.notice.bind(this, 6)}>按钮6</Button>
              <HuaDrawer dispaly={this.state.dispaly}>
                抽屉
              </HuaDrawer>

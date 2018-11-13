@@ -1,3 +1,4 @@
+@import '../../common.scss';
 .container{
   width: 600px;
   height: 200px;
@@ -33,7 +34,8 @@
       padding: 6px 12px;
       border-radius: 4px 4px 0 0;
       border-bottom: 1px solid #e8e8e8;
-      width: 100%
+      width: 100%;
+      color: $default-black
     }
   }
   
