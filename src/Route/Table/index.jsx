@@ -1,6 +1,7 @@
 import React from 'react'
 import HuaTable from '../../Component/HuaTable'
 import HuaPagination from '../../Component/HuaPagination'
+import styles from './index.scss'
 const dataSource = [{
   key: '1',
   name: '胡彦斌',
@@ -114,6 +115,8 @@ export default class Table extends React.Component{
               dataSource={dataSource}
               columns={columns(this.state.sortedInfo)}
               bordered
+              className={styles.myTable}
+              style={{width: '1000px'}}
               onChange={this.handleTableChange}
               local={{
                 emptyText: '暂无数据'

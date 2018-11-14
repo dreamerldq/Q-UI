@@ -2,6 +2,8 @@ import React from 'react';
 import _ from 'lodash';
 import { Icon } from 'antd';
 import styles from './index.scss';
+import classnames from 'classnames';
+
 
 export default class HuaTable extends React.Component {
   constructor(props) {
@@ -98,7 +100,7 @@ export default class HuaTable extends React.Component {
     const columnsDataIndex = columns.map(column => column.dataIndex);
     return (
       <div>
-      <table className={styles.hua_table}>
+      <table style={this.props.style} className={classnames(styles.hua_table, this.props.className) }>
       <thead>
           <tr className={styles.table_tr}>
                 {this.renderTableHeader()}

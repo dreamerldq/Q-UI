@@ -27,7 +27,7 @@ export default class HuaProgress extends React.Component {
                 a 47,47 0 1 1 0,-94"
               strokeLinecap="round"
               strokeWidth="6"
-              fillOpacity="0"
+              fillOpacity="0"                                             //strokeDasharry 第一个值是填充的长度，第二个值是不填充的长度。
                style={{stroke: "rgb(16, 142, 233)", strokeDashoffset:'0px', strokeDasharray: `${C*percent/100}, ${C}`, transition: "strokeDashoffset 0.3s ease 0s, strokeDasharray 0.3s ease 0s"}}
             />
           </svg>
