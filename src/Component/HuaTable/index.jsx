@@ -2,8 +2,8 @@ import React from 'react';
 import _ from 'lodash';
 import { Icon } from 'antd';
 import styles from './index.scss';
+import HuaIcon from '../HuaIcon'
 import classnames from 'classnames';
-
 
 export default class HuaTable extends React.Component {
   constructor(props) {
@@ -140,7 +140,8 @@ export default class HuaTable extends React.Component {
        }
      </tbody>}
       </table>
-
+      <HuaIcon className="icon-xiaoxi"></HuaIcon>
+      <HuaIcon className="icon-shuben"></HuaIcon>
       </div>
     );
   }
