@@ -12,6 +12,7 @@ export default class Layout extends React.Component{
         <Content>
             {this.props.children}
         </Content>
+        <Footer>Create by ldq</Footer>
       </HuaLayout>
     )
   }

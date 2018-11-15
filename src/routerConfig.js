@@ -6,6 +6,7 @@ import Table from './Route/Table';
 import Transfer from './Route/Transfer';
 import Progress from './Route/Progress';
 import Notification from './Route/Notification';
+import CustomLayout from './Route/CustomLayout';
 import Tabs from './Route/Tabs';
 
 const routerConfig = [
@@ -43,6 +44,10 @@ const routerConfig = [
     path: '/progress',
     component: Progress,
     layout: Layout,
+  },
+  {
+    path: '/layout',
+    component: CustomLayout,
   },
 ];
 export default routerConfig;

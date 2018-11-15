@@ -27,5 +27,9 @@ const menuConfig = [
     name: '进度条',
     path: '/progress',
   },
+  {
+    name: '布局',
+    path: 'layout',
+  },
 ];
 export default menuConfig;

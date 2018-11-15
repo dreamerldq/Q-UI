@@ -1,23 +1,41 @@
 .hua_layout{
   box-sizing: border-box;
+  display: flex;
+  flex: auto;
+  flex-direction: column;
   .header{
-    color: #ffffff;
-    background: #7dbcea;
-    height: 64px;
+    background: #001529;
     line-height: 64px;
-    text-align: center;
+    padding: 0 50px;
+    flex:  0 0 auto;
   }
   .content{
-    color: #ffffff;
-    min-height: 120px;
-    text-align: center;
+    background: #f0f2f5;
+    min-height: 0;
+    flex: auto;
   }
   .footer{
-    background: 7dbcea;
-    line-height: 1.5;
+    background: #f0f2f5;
     padding: 24px 50px;
-    color: #ffffff;
-    text-align: center;
-    background: #7dbcea;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.65);
+    flex: 0 0 auto;
+  }
+  .sider{
+    line-height: 120px;
+    background: #001529;
+  }
+}
+.siderContent{
+  flex-direction: row;
+  background: #f0f2f5;
+  .sider{
+    max-width: 200px;
+    min-width: 200px;
+    width: 200px;
+    float: 0 0 200px;
+    background: #8b8b8b;
+    color: #fff;
+    line-height: 120px;
   }
 }
