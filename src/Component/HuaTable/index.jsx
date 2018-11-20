@@ -140,8 +140,6 @@ export default class HuaTable extends React.Component {
        }
      </tbody>}
       </table>
-      <HuaIcon className="icon-xiaoxi"></HuaIcon>
-      <HuaIcon className="icon-shuben"></HuaIcon>
       </div>
     );
   }

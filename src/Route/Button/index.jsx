@@ -3,6 +3,7 @@ import HuaSelect from '../../Component/HuaSelect'
 import HuaInputNumber from '../../Component/HuaInputNumber'
 import HuaUpload from '../../Component/HuaUpload'
 import HuaCheckbox from '../../Component/HuaCheckbox'
+import HuaRadio from '../../Component/HuaRadio'
 const {CheckboxGroup} = HuaCheckbox
 import {Icon} from 'antd'
 import HuaDrawer from '../../Component/HuaDrawer'
@@ -23,7 +24,8 @@ class Button extends React.Component{
       currentSelect: 'jack',
       dispaly: false,
       checkboxValues:['Apple'],
-      singleCheck: false
+      singleCheck: false,
+      currentRadio: 4
     }
   }
 
@@ -44,6 +46,11 @@ class Button extends React.Component{
     if(file.file.status === 'error'){
       message.error(`${file.file.name}上传失败`)
     }
+  }
+  radioGroupChange = (value) => {
+    this.setState({
+      currentRadio: value
+    })
   }
   handleChange = (value) =>{
     console.log("Select Value:", value)
@@ -122,6 +129,13 @@ class Button extends React.Component{
                复选框
                <HuaCheckbox onChange={this.handelCheck} checkeds={this.state.singleCheck}>单选</HuaCheckbox>
              </span>
+             <HuaRadio>Radio</HuaRadio>
+             <HuaRadio.RadioGroup value={this.state.currentRadio} onChange={this.radioGroupChange}>
+                <HuaRadio value={1}>Radio</HuaRadio>
+                <HuaRadio value={2}>Radio2</HuaRadio>
+                <HuaRadio value={3}>Radio3</HuaRadio>
+                <HuaRadio value={4}>Radio4</HuaRadio>
+             </HuaRadio.RadioGroup>
     </React.Fragment>
     )
   }

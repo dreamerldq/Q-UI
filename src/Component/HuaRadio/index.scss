@@ -1,0 +1,27 @@
+@import '../../common.scss';
+.container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    .radioLabel{
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border:1px solid $blue;
+        position: relative;
+        margin-right: 5px;
+        .checkedRadio{
+            width: 10px;
+            height: 10px;
+            background: $blue;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%)
+        }
+    }
+    .radio{
+        display: none;
+    }
+}
