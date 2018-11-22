@@ -6,7 +6,9 @@ import Table from './Route/Table';
 import Transfer from './Route/Transfer';
 import Progress from './Route/Progress';
 import Notification from './Route/Notification';
+import Carouseal from './Route/Carouseal'
 import CustomLayout from './Route/CustomLayout';
+import DatePicker from './Route/DatePicker'
 import Tabs from './Route/Tabs';
 
 const routerConfig = [
@@ -49,5 +51,14 @@ const routerConfig = [
     path: '/layout',
     component: CustomLayout,
   },
+  {
+    path: '/lunbo',
+    component: Carouseal
+  },
+  {
+    path: '/datepicker',
+    component: DatePicker,
+    layout: Layout
+  }
 ];
 export default routerConfig;

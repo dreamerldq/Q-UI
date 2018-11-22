@@ -31,5 +31,13 @@ const menuConfig = [
     name: '布局',
     path: 'layout',
   },
+  {
+    name: '轮播图',
+    path: 'lunbo'
+  },
+  {
+    name: '日期选择器',
+    path: 'datepicker'
+  }
 ];
 export default menuConfig;
