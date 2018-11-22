@@ -5,6 +5,9 @@ class HuaInput extends React.Component{
   constructor(props){
     super(props)
   }
+  handleChange = (e) => {
+    this.props.onChange(e)
+  }
   render(){
     const {label,isRequired, type} = this.props
     return(
@@ -16,7 +19,7 @@ class HuaInput extends React.Component{
         <span className={styles.label}>{`${label ||'标签'}:`}</span>
       </div>
       <div className={styles.input}>
-       <Input type={type} placeholder={label}/>
+       <Input onChange={this.handleChange} type={type} placeholder={label}/>
       </div>
       </div>
       

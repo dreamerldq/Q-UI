@@ -38,6 +38,14 @@ const menuConfig = [
   {
     name: '日期选择器',
     path: 'datepicker'
+  },
+  {
+    name: '阿里表单',
+    path: 'antform'
+  },
+  {
+    name: '表单',
+    path: 'form'
   }
 ];
 export default menuConfig;
