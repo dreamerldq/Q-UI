@@ -16,10 +16,9 @@ class HuaInput extends React.Component{
         
         { isRequired ? <span className={styles.required}>*</span>: null}
         
-        <span className={styles.label}>{`${label ||'标签'}:`}</span>
       </div>
-      <div className={styles.input}>
-       <Input onChange={this.handleChange} type={type} placeholder={label}/>
+      <div >
+       <Input className={styles.input} onChange={this.handleChange} type={type} placeholder={label}/>
       </div>
       </div>
       

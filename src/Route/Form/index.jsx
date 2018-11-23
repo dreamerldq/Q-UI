@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./index.scss";
-import { Input,Button, Icon } from "antd";
+import HuaButton from '../../Component/HuaButton'
 import HOCForm from "../../Component/HuaForm/hoc";
 import HuaForm from "../../Component/HuaForm";
 import HuaInput from '../../Component/HuaInput'
@@ -21,8 +21,7 @@ class Form extends React.Component {
       <div>
         <HuaForm>
           <FormItem
-          //   validateStatus={userNameError ? "error" : ""}
-          //   help={userNameError || ""}
+         
           >
             {getFieldDecorator("username", {
               rules: [
@@ -35,8 +34,7 @@ class Form extends React.Component {
             )}
           </FormItem>
           <FormItem
-          //   validateStatus={userNameError ? "error" : ""}
-          //   help={userNameError || ""}
+          
           >
             {getFieldDecorator("password", {
               
@@ -47,7 +45,7 @@ class Form extends React.Component {
               />
             )}
           </FormItem>
-          <Button onClick={this.handleForm}>提交</Button>
+          <HuaButton onClick={this.handleForm}>提交</HuaButton>
         </HuaForm>
       </div>
     );
