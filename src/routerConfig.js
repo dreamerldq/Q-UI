@@ -6,12 +6,13 @@ import Table from './Route/Table';
 import Transfer from './Route/Transfer';
 import Progress from './Route/Progress';
 import Notification from './Route/Notification';
-import Carouseal from './Route/Carouseal'
+import Carouseal from './Route/Carouseal';
 import CustomLayout from './Route/CustomLayout';
-import DatePicker from './Route/DatePicker'
+import DatePicker from './Route/DatePicker';
 import Tabs from './Route/Tabs';
-import AntFrom from './Route/AntForm'
-import Form from './Route/Form'
+import AntFrom from './Route/AntForm';
+import Form from './Route/Form';
+
 const routerConfig = [
   {
     path: '/button',
@@ -54,20 +55,20 @@ const routerConfig = [
   },
   {
     path: '/lunbo',
-    component: Carouseal
+    component: Carouseal,
   },
   {
     path: '/datepicker',
     component: DatePicker,
-    layout: Layout
+    layout: Layout,
   },
-  {
-    path: '/antform',
-    component: AntFrom
-  },
+  // {
+  //   path: '/antform',
+  //   component: AntFrom,
+  // },
   {
     path: '/form',
-    component: Form
-  }
+    component: Form,
+  },
 ];
 export default routerConfig;

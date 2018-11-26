@@ -33,19 +33,19 @@ const menuConfig = [
   },
   {
     name: '轮播图',
-    path: 'lunbo'
+    path: 'lunbo',
   },
   {
-    name: '日期选择器',
-    path: 'datepicker'
+    name: '日期选择',
+    path: 'datepicker',
   },
-  {
-    name: '阿里表单',
-    path: 'antform'
-  },
+  // {
+  //   name: '阿里表单',
+  //   path: 'antform',
+  // },
   {
     name: '表单',
-    path: 'form'
-  }
+    path: 'form',
+  },
 ];
 export default menuConfig;

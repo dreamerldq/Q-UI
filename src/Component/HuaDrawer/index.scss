@@ -1,9 +1,36 @@
 .hua_drawer{
   width: 280px;
+  max-width: 280px;
+  min-width: 280px;
   overflow: auto;
   height: 100%;
   background: rgb(218, 218, 218);
   position: fixed;
   top: 0;
-  transition: 1s left
+  transition: 1s all;
+  .title{
+    padding: 16px 24px;
+    border-bottom: 1px solid rgb(197, 197, 197);
+    overflow: hidden;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .content{
+    padding: 16px 24px;
+    box-sizing: border-box;
+  }
+  .close{
+    font-size: 24px;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+  }
+}
+.mask{
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.65);
+  position: fixed;
+  width: 100vw;
+  top: 0;
+  z-index: 10;
 }
