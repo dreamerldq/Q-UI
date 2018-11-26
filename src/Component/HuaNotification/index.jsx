@@ -2,20 +2,28 @@ import React from 'react'
 import styles from './index.scss'
 import ReactDOM from 'react-dom'
 
-const body = document.getElementById('notification')
-body.style.height= '100vh'
-body.style.width = '500px'
-body.style.display='flex'
-body.style.flexDirection = 'column'
-body.style.alignItems = 'center'
-body.style.position='fixed'
-// body.style.background = 'red'
-body.style.right = 0
-body.style.top = 0
+let body = null
+const topBody = document.querySelector('body')
 const notification = {
   children: [],
   count: 0,
   open({message, description, duration}){
+    const childLen = this.children.length
+    if(childLen === 0){
+      // body = document('notification')
+     
+      body = document.createElement('div')
+      body.id = 'notification'
+      topBody.appendChild(body)
+      body.style.height= '100vh'
+      body.style.width = '500px'
+      body.style.display='flex'
+      body.style.flexDirection = 'column'
+      body.style.alignItems = 'center'
+      body.style.position='fixed'
+      body.style.right = 0
+      body.style.top = 0
+    }
     this.count += 1
     const Notifcation = React.createElement(
       Notifcations,
@@ -30,8 +38,12 @@ const notification = {
     this.children.push(Notifcation)
     setTimeout(() => {
       body.removeChild(node)
-    }, duration * 1000);
-
+      this.children.pop()
+      const length = this.children.length
+      if(length === 0){
+        topBody.removeChild(body)
+      }
+    }, (duration || 4.5) * 1000);
   ReactDOM.render(Notifcation, document.getElementById(`notice${this.count}`));
   }
 }
