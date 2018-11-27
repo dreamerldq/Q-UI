@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 const webpackConfig = {
   entry: ['babel-polyfill', path.join(__dirname, '/src/index.js')],
@@ -34,6 +35,7 @@ const webpackConfig = {
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'public/index.html'),
     }),
+    new BundleAnalyzerPlugin(),
   ],
   resolve: {
     extensions: ['.js', '.jsx', 'scss', 'css'],

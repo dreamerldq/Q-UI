@@ -38,14 +38,11 @@ class HuaButton extends React.Component {
     super(props);
   }
 
-
   render() {
     const {
-      type, href, target, onClick, disabled, children, className, classes,
+      onClick, disabled, children, classes,
     } = this.props;
     return (
-
-    // <a href={href} target={href && target}>
           <button
               onClick={onClick}
               disabled={disabled}
@@ -53,7 +50,6 @@ class HuaButton extends React.Component {
               >
               {children}
           </button>
-    // </a>
     );
   }
 }

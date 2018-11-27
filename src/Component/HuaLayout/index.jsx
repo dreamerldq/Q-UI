@@ -13,7 +13,6 @@ class HuaLayout extends React.Component{
       layout: []
     }
     this.props.children.forEach((child) => {
-      console.log(child.type.name)
       if(child.type.name === 'LayoutSider'){
         layout.sider = child
         hasSider = true
