@@ -3,6 +3,7 @@ import HuaSelect from "../../Component/HuaSelect";
 import HuaInputNumber from "../../Component/HuaInputNumber";
 import HuaUpload from "../../Component/HuaUpload";
 import HuaCheckbox from "../../Component/HuaCheckbox";
+import HuaSlider from '../../Component/HuaSlider/index';
 import HuaRadio from "../../Component/HuaRadio";
 const { CheckboxGroup } = HuaCheckbox;
 import { Icon } from "antd";
@@ -26,7 +27,8 @@ class Button extends React.Component {
       checkboxValues: ["Apple"],
       singleCheck: false,
       currentRadio: 4,
-      dispaly: false
+      dispaly: false,
+      sliderValue: 0
     };
   }
 
@@ -85,10 +87,15 @@ class Button extends React.Component {
       dispaly: !this.state.dispaly
     });
   };
+  handleSlider = (value) => {
+      this.setState({
+        sliderValue: value
+      })
+  }
   render() {
     return (
       <React.Fragment>
-        <HuaButton type="danger">按钮</HuaButton>
+        {/* <HuaButton type="danger">按钮</HuaButton>
         <HuaButton disabled>按钮</HuaButton>
         <HuaButton>按钮</HuaButton>
         <HuaButton onClick={() => console.log("button")} type="primary">
@@ -162,7 +169,8 @@ class Button extends React.Component {
           <HuaRadio value={2}>Radio2</HuaRadio>
           <HuaRadio value={3}>Radio3</HuaRadio>
           <HuaRadio value={4}>Radio4</HuaRadio>
-        </HuaRadio.RadioGroup>
+        </HuaRadio.RadioGroup> */}
+        <HuaSlider max={100} min={0} value={this.state.sliderValue} onChange={this.handleSlider}></HuaSlider>
       </React.Fragment>
     );
   }

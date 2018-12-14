@@ -70,18 +70,18 @@ export default class HuaDatePicker extends React.Component {
       const arr1 = [];
       for (var j = 0; j < 7; j++) {
         if (i === 0) {
-          arr1[j] = week[j];
+          arr1[j] = week[j]; // 第一行显示星期
         } else {
-          if (j < whichDay - 1 && count === 0) {
+          if (j < whichDay - 1 && count === 0) { // 如果日历中第J列的值小于每月第一天对应的星期，则显示上一个的最后几天。
             const num = lastMonthLenght - (whichDay - j) + 1;
-            arr1[j] = { type: "pre", day: num, key: `pre${num}` };
+            arr1[j] = { type: "umnonth", day: num, key: `pre${num}` };
           } else if (count >= monthLen) {
             num = num + 1;
 
-            arr1[j] = { type: "last", day: num, key: `last${num}` };
+            arr1[j] = { type: "umnonth", day: num, key: `last${num}` }; // 当count的值大于当月的最后一天，则从1开始叠加直到填充满本行
           } else {
-            count = count + 1;
-            arr1[j] = { type: "yes", day: count, key: `yes${count}` };
+            count = count + 1; // 当日历中的第J列的值大于等于每月第一天对应的星期，则后续的值叠加1展示，知道当前count的值大于当前月的最后一天的值。
+            arr1[j] = { type: "month", day: count, key: `yes${count}` };
           }
         }
       }
@@ -109,20 +109,20 @@ export default class HuaDatePicker extends React.Component {
   componentDidMount() {
     this.renderPicker(this.state.currentDate);
   }
-  handleDay = day => {
+  handleDay = (day, type) => {
     console.log("AAA", day);
     const [year, month] = this.state.currentDate;
     this.setState({
-      currentDate: [year, month, day]
+      currentDate: [year, month, {value: day, type}]
     });
   };
   renderTdCell = cell => {
     const day = this.state.currentDate[2];
-    if (day === cell.day) {
-      if (cell.type === "yes") {
+    if (day.value === cell.day) {
+      if (cell.type === "month" && day.type === 'month') {
         return (
           <td
-            onClick={this.handleDay.bind(this, cell.day)}
+            onClick={this.handleDay.bind(this, cell.day, cell.type)}
             key={cell.key}
             style={{ background: "#1890ff" }}
             className={styles.tbale_td}
@@ -130,10 +130,10 @@ export default class HuaDatePicker extends React.Component {
             {cell.day}
           </td>
         );
-      } else {
+      } else if(cell.type === 'yes' && day){
         return (
           <td
-            onClick={this.handleDay.bind(this, cell.day)}
+            onClick={this.handleDay.bind(this, cell.day,cell.type)}
             key={cell.key}
             style={{ background: "black" }}
             className={styles.tbale_td}
@@ -145,7 +145,7 @@ export default class HuaDatePicker extends React.Component {
     } else {
       return (
         <td
-          onClick={this.handleDay.bind(this, cell.day)}
+          onClick={this.handleDay.bind(this, cell.day,cell.type)}
           key={cell.key}
           className={styles.tbale_td}
         >

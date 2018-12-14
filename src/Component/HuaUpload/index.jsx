@@ -9,8 +9,8 @@ export default class HuaUpload extends React.Component{
       fileName: ''
     }
   }
-  handleChange = (e) =>{
-    const file = e.target.files[0]
+  handleChange = (e) =>{ //当选择文件后执行
+    const file = e.target.files[0] // 获取被选择的文件对象
   
     this.uploadFile(file)
     .finally((res)=>{
@@ -30,17 +30,17 @@ export default class HuaUpload extends React.Component{
   }
   uploadFile = (file) => {
     this.setState({
-      fileName: file.name
+      fileName: file.name //显示文件名称
     })
     return new Promise((resolve, reject) => {
-      this.props.onChange({file: {status: 'uploading', name: file.name}})
+      this.props.onChange({file: {status: 'uploading', name: file.name}}) // 更新父组件的状态 uploading
       var request = new XMLHttpRequest();
       var formData = new FormData();
-      formData.append(this.props.name, file);
+      formData.append(this.props.name, file);// 创建formdata文件流
       request.open('POST', this.props.action);
       request.send(formData);
       request.onload = (res) => {
-        this.props.onChange({file: {status: 'done', response: res,name: file.name}})
+        this.props.onChange({file: {status: 'done', response: res,name: file.name}}) // 上传成功后更新状态
         resolve()
       }
       request.onerror = (res) =>{
@@ -53,7 +53,8 @@ export default class HuaUpload extends React.Component{
     const {name, action,headers, onChange} = this.props
     return(
       <React.Fragment>
-        <label htmlFor="fileX">{this.props.children}</label>
+        {/* 通过label的for指向上传文件的输入框，自定义输入框的样式 */}
+        <label htmlFor="fileX">{this.props.children}</label> 
         {
           this.state.show ?
           <div>{this.state.fileName}</div>:
