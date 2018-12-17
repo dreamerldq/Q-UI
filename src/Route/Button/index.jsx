@@ -170,7 +170,13 @@ class Button extends React.Component {
           <HuaRadio value={3}>Radio3</HuaRadio>
           <HuaRadio value={4}>Radio4</HuaRadio>
         </HuaRadio.RadioGroup> */}
-        <HuaSlider max={100} min={0} value={this.state.sliderValue} onChange={this.handleSlider}></HuaSlider>
+        <HuaSlider 
+          max={100} 
+          min={0} 
+          value={this.state.sliderValue} 
+          onChange={this.handleSlider}
+          step={5}
+          ></HuaSlider>
       </React.Fragment>
     );
   }
