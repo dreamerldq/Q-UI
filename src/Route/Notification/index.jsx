@@ -1,5 +1,6 @@
 import React from 'react'
 import HuaNotification from '../../Component/HuaNotification'
+import HuaMessage from '../../Component/HuaMeassage'
 import HuaButton  from '../../Component/HuaButton'
 
 export default class Notification extends React.Component{
@@ -33,18 +34,14 @@ export default class Notification extends React.Component{
       break;
 
       case 4:
-      HuaNotification.open({
-        message: 'Notification Title 4',
-        description: 'I will never close automatically. I will be close automatically. I will never close automatically.',
-        duration: 3
+      HuaMessage.success({
+        content: '成功'
       })
       break;
 
       case 5:
-      HuaNotification.open({
-        message: 'Notification Title 5',
-        description: 'I will never close automatically. I will be close automatically. I will never close automatically.',
-        duration: 3
+      HuaMessage.error({
+        content: '失败'
       })
       break;
     }
