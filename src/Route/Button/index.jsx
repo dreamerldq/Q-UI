@@ -8,6 +8,7 @@ import HuaRadio from "../../Component/HuaRadio";
 const { CheckboxGroup } = HuaCheckbox;
 import { Icon } from "antd";
 import HuaDrawer from "../../Component/HuaDrawer";
+import HuaModal from '../../Component/HuaModal'
 import React from "react";
 const props = {
   name: "file",
@@ -28,7 +29,8 @@ class Button extends React.Component {
       singleCheck: false,
       currentRadio: 4,
       dispaly: false,
-      sliderValue: 0
+      sliderValue: 0,
+      modalVisible: false
     };
   }
 
@@ -81,7 +83,21 @@ class Button extends React.Component {
       });
     }
   };
-
+  showModal = () => {
+    this.setState({
+      modalVisible: true
+    })
+  }
+  cancelModal = () => {
+    this.setState({
+      modalVisible: false
+    })
+  }
+  okModal = () => {
+    this.setState({
+      modalVisible:false
+    })
+  }
   handleDisplay = () => {
     this.setState({
       dispaly: !this.state.dispaly
@@ -177,6 +193,22 @@ class Button extends React.Component {
           onChange={this.handleSlider}
           step={5}
           ></HuaSlider>
+
+          <HuaButton 
+            onClick={this.showModal}
+          >
+          显示modal
+          </HuaButton>
+          <HuaModal
+            visible={this.state.modalVisible}
+            title='Modal'
+            onCancel={this.cancelModal}
+            onOk={this.okModal}
+          >
+           <p>Some contents...</p>
+           <p>Some contents...</p>
+           <p>Some contents...</p>
+          </HuaModal>
       </React.Fragment>
     );
   }

@@ -1,0 +1,41 @@
+.container{
+    position: fixed;
+    overflow: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    outline: 0;
+    background-color: rgba(0,0,0,.65);
+    .body{
+        width: 520px;
+        margin: 0 auto;
+        background-color: #fff;
+        border: 0;
+        padding: 10px 20px;
+        border-radius: 4px;
+        background-clip: padding-box;
+        position: relative;
+        top: 100px;
+        box-shadow: 0 4px 12px rgba(0,0,0,.15);
+        .header{
+            font-weight: bold;
+            padding-bottom: 10px;
+            font-size: 24px;
+        }
+        .content{
+            border-top: 1px solid  rgb(214, 214, 214);
+            border-bottom: 1px solid rgb(214, 214, 214);
+            min-height: 100px;
+            padding: 24px 0;
+            word-wrap: break-word;
+        }
+        .footer{
+            display: flex;
+            justify-content: flex-end;
+            padding-top: 10px;
+        }
+    }
+   
+}
