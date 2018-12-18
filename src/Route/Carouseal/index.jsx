@@ -7,12 +7,14 @@ export default class Carouseal extends React.Component{
     }
     render(){
         return(
-            <HuaCarousel autoplay>
+            <div style={{width: '300px'}}>
+                <HuaCarousel autoplay>
                 <div style={{background:'red'}} className={styles.container}><h3>1</h3></div>
                 <div style={{background:'blue'}} className={styles.container}><h3>2</h3></div>
                 <div style={{background:'orange'}} className={styles.container}><h3>3</h3></div>
                 <div style={{background:'pink'}} className={styles.container}><h3>4</h3></div>
             </HuaCarousel>
+            </div>
         )
     }
 }

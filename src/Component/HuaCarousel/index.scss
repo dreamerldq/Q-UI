@@ -1,7 +1,6 @@
 .container{
     background: black;
     overflow: hidden;
-    width: 200px;
     height: 150px;
     position: relative;
     .carousel{
@@ -10,7 +9,7 @@
         height: 150px;
         background: red;
         position: absolute;
-        // transition: left 0.5s;
+        transition-property: left;
     }
     .cicleGroup{
         position: absolute;
@@ -29,5 +28,22 @@
             border-radius: 50%;
             
         }
+    }
+    .arrow{
+        width: 50px;
+        height: 50px;
+        font-size: 36px;
+        color: #fff;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    .leftArrow{
+        @extend .arrow;
+        left: 0;
+    }
+    .rightArrow{
+        @extend .arrow;
+        right: 0;
     }
 }
