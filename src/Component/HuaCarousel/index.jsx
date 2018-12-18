@@ -109,7 +109,7 @@ export default class HuaCarousel extends React.Component{
             return React.cloneElement(
                 child,
                 {
-                    style:{width:'100%'},
+                    style:{...child.props.style,width:'100%'},
                     key:index,
                     onMouseEnter: this.handleMouseEnter,
                     onMouseLeave: this.handelMouseLeave
@@ -118,10 +118,11 @@ export default class HuaCarousel extends React.Component{
         })
     }
     render(){
+       
         const { clientWidth,currentKey } = this.state;
         const childrens = this.enhanceChildren()
         return(
-            <div ref={this.container} className={styles.container}>
+            <div ref={this.container}  className={styles.container}>
                 <div 
                     className={styles.carousel}
                         style={{
@@ -133,15 +134,25 @@ export default class HuaCarousel extends React.Component{
                 </div>
                 <div  className={styles.cicleGroup}>
                     {this.props.children.map((child, index) => {
-                        return <div onClick={this.handleCicle.bind(this, index+1)} key={index} className={styles.cicle}></div>
+                        return <div 
+                        onClick={this.handleCicle.bind(this, index+1)}
+                        key={index}
+                        className={(index +1) == currentKey ? styles.cicleActive : styles.cicle}
+                        
+                          >
+                          </div>
                     })}
                 </div>
 
-                <div onClick={this.handelArrow.bind(this,'left')} className={styles.leftArrow}>
-                    <Icon type="left" />
-                </div>
-                <div onClick={this.handelArrow.bind(this,'right')} className={styles.rightArrow}>
-                    <Icon type="right" />
+                <div style={{display: this.props.dots ? 'block' : 'none'}}>
+                    <div onMouseEnter={this.handleMouseEnter}
+                            onMouseLeave={this.handelMouseLeave} onClick={this.handelArrow.bind(this,'left')} className={styles.leftArrow}>
+                        <Icon type="left" />
+                    </div>
+                    <div onMouseEnter={this.handleMouseEnter}
+                            onMouseLeave={this.handelMouseLeave} onClick={this.handelArrow.bind(this,'right')} className={styles.rightArrow}>
+                        <Icon type="right" />
+                    </div>
                 </div>
             </div>
         )

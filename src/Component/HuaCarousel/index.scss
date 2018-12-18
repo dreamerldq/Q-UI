@@ -28,6 +28,10 @@
             border-radius: 50%;
             
         }
+        .cicleActive{
+            @extend .cicle;
+            background: rgba(0, 128, 160, 0.747);
+        }
     }
     .arrow{
         width: 50px;
